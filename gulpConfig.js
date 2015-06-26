@@ -5,16 +5,14 @@
   
 */
 
-
-
-var src         = './src',
-    dest        = './build',
-    bower       = './bower_components',
-    composer    = './vendor'
-;
+// Main variables
+var src             = './src',
+    dest            = './build',
+    bowerDir        = './bower_components';
 
 // Project settings
 module.exports = {
+
   html: {
     src: src + '/**/*.html',
     dest: dest,
@@ -25,36 +23,50 @@ module.exports = {
   },
 
   scripts: {
-    src: src + '/js/**/*.js',
+    src: src + '/javascript/**/*.js',
     dest: dest + '/js',
-    libs: {
-      src: src + '/libs/**/*',
-      dest: dest + '/libs'
-    }
-    
+  },
+
+  php: {
+
   },
 
   sass: {
     src: src + '/sass/**/*.{sass,scss}',
     dest: dest+'/css',
     settings: {
+      style: 'compressed',
       // indentedSyntax: true, // Enable .sass syntax!
-      imagePath: 'images', // Used by the image-url helper
+      loadPath: [
+        bowerDir + '/bootstrap-sass-official/assets/stylesheets',
+        bowerDir + '/fontawesome/scss',
+      ],
+      imagePath: 'img', // Used by the image-url helper
       errLogToConsole: true
     }
   },
 
+  iconfonts: {
+    src: bowerDir + '/fontawesome/fonts/**.*',
+    dest: dest + '/fonts'
+  },
+
   images: {
     src: src + '/images/**/*.{png,jpg,jpeg,gif,svg}',
-    dest: dest + '/images'
+    dest: dest + '/img'
+  },
+
+  bower: {
+    src: bowerDir,
+    dest: dest
   },
 
   browserSync: {
     server: {
       // Serve up our build folder
-      // baseDir: dest
-      // or a domain name
-      // proxy: 'trovalow.dev'
+      baseDir: dest
+      // or proxy a vm server
+      // proxy: 'example.local'
     }
   },
   
