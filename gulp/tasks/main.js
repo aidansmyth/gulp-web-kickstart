@@ -24,4 +24,7 @@ gulp.task('watch',['browserSync'], function () {
 });
 
 // Default task 
-gulp.task('default', ['bower', 'iconfonts', 'scripts', 'sass', 'images', 'html', 'watch']);
+gulp.task('default', ['scripts', 'sass', 'images', 'html', 'watch']);
+
+// alvaiable/planned tasks
+// 'scripts', 'sass', 'images', 'html', 'watch' 'bower', 'iconfonts', 
