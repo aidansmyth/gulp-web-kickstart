@@ -16,7 +16,6 @@ var gulp          = require('gulp'),
     size          = require('gulp-filesize'),
     changed       = require('gulp-changed'),
     rename        = require('gulp-rename'),
-    sass          = require('gulp-sass'),
     rubySass      = require('gulp-ruby-sass'),
     sourcemaps    = require('gulp-sourcemaps'),
     autoprefixer  = require('gulp-autoprefixer'),
@@ -47,13 +46,16 @@ gulp.task('scss-lint', function() {
 });
 
 gulp.task('sass', function() {
+
     return gulp.src(config.src)
     .pipe(plumber({ errorHandler: onError }))
+    .pipe(sass(config.settings))
     .pipe(changed(config.dest))
     .pipe(sourcemaps.init())
-    .pipe(sass(config.settings))
-    .pipe(sourcemaps.write())
     .pipe(autoprefixer({ browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'] }))
+    .pipe(filter) // Don’t write sourcemaps of sourcemaps
+    .pipe(sourcemaps.write())
+    .pipe(filter.restore()) // Restore original files
     .pipe(gulp.dest(config.dest))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifyCss())

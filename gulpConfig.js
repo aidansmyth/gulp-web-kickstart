@@ -39,14 +39,11 @@ module.exports = {
     src: src + '/sass/**/*.{sass,scss}',
     dest: dest+'/css',
     settings: {
-      style: 'compressed',
-      // indentedSyntax: true, // Enable .sass syntax!
-      loadPath: [
-        bowerDir + '/bootstrap-sass-official/assets/stylesheets',
-        bowerDir + '/fontawesome/scss',
-      ],
-      imagePath: 'img', // Used by the image-url helper
-      errLogToConsole: true
+      noCache: true,
+      compass: false,
+      bundleExec true,
+      sourcemap: true,
+      sourcemapPath: src + '/sass'
     }
   },
 
