@@ -8,7 +8,11 @@
 // Main variables
 var src             = './src',
     dest            = './build',
-    bowerDir        = './bower_components';
+    bowerDir        = './bower_components'
+
+    //
+    projectName     = ''
+    generateTheme   = false;
 
 // Project settings
 module.exports = {
