@@ -1,0 +1,30 @@
+// 
+// 
+// 
+// 
+// 
+
+
+
+// SCSS STYLES
+
+// Variables
+$red: #bf3130;
+$green: #689b00;
+$blue: #1440ab;
+
+$bml-width: 300px;
+$bml-height: 100px;
+
+// Mixins
+
+
+// IMPLEMENTATION
+.bml-overlay {
+  background: $red;
+  height: $bml-height;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: $bml-width;
+}
