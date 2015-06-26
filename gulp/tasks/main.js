@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 // ------------------------------
 
 // Default task 
-gulp.task('watch', ['browserSync'], function () {
+gulp.task('watch',['browserSync'], function () {
   gulp.watch(config.html.src,   ['html']);
   gulp.watch(config.sass.src,   ['sass']);
   gulp.watch(config.images.src, ['images']);
@@ -24,4 +24,4 @@ gulp.task('watch', ['browserSync'], function () {
 });
 
 // Default task 
-gulp.task('default', ['html', 'jsCopylibs', 'scripts', 'sass', 'images', 'cachebust', 'watch']);
+gulp.task('default', ['bower', 'iconfonts', 'scripts', 'sass', 'images', 'html', 'watch']);
