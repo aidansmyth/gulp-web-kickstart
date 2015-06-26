@@ -33,9 +33,7 @@ var onError = function(err) {
 
 // Browser sync task
 gulp.task('browserSync', function() { 
-  browserSync.init({
-        proxy: "trovalow.dev"
-    });
+  browserSync.init(config);
 }); 
 
 // BrowserSync reload all Browsers

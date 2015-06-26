@@ -44,7 +44,7 @@ gulp.task('uglify', function() {
   return gulp.src(config.src)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(changed(config.dest))
-    .pipe(concat('trovalow-bookmarklet.js'))
+    .pipe(concat('global.js'))
     .pipe(gulp.dest(config.dest))
     .pipe(uglify())
     .pipe(rename({
