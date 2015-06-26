@@ -1,0 +1,13 @@
+{
+  "name": "gulp-web-kickstart",
+  "version": "0.0.0",
+  "homepage": "https://github.com/aidansmyth/gulp-web-kickstart",
+  "authors": [
+    "Aidan Smyth <smyth.aidan@gmail.com>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap-sass-official": "~3.3.5",
+    "fontawesome": "~4.3.0"
+  }
+}
