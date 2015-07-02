@@ -1,5 +1,5 @@
 /*
-  Scripts tasks
+  HTML tasks
   --------------------------------------------------------------------
 
 */
@@ -11,16 +11,11 @@ var gulp          = require('gulp'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
     // specific task config
-    config        = require('../../gulpConfig').scripts,
+    config        = require('../gulpconfig').html,
     // specific task modules
     size          = require('gulp-filesize'),
     changed       = require('gulp-changed'),
-    uglify        = require('gulp-uglify'),
-    jshint        = require('gulp-jshint'),
-    stylish       = require('jshint-stylish'),
-    concat        = require('gulp-concat'),
-    rename        = require('gulp-rename'),
-    browserSync   = require('browser-sync')
+    minifyHTML    = require('gulp-minify-html')
 ;
 
 // Error handler
@@ -39,34 +34,15 @@ var onError = function(err) {
 // Tasks
 // ------------------------------
 
-// Uglify task
-gulp.task('uglify', function() {
+// Minify task
+gulp.task('htmlmin', function() {
   return gulp.src(config.src)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(changed(config.dest))
-    .pipe(concat('global.js'))
+    .pipe(minifyHTML(config.settings))
     .pipe(gulp.dest(config.dest))
-    .pipe(uglify())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(config.dest))
-    .pipe(size())
-    .pipe(browserSync.stream());
+    .pipe(size());
 });
-
-// js Lint task
-gulp.task('jshint', function() {
-  return gulp.src(config.src)
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(jshint())
-    .pipe(jshint.reporter(stylish));
-});
-
-gulp.task('jsCopylibs', function() {
-  return gulp.src(config.libs.src)
-    .pipe(gulp.dest(config.libs.dest))
-})
 
 // Global scripts task
-gulp.task('scripts', ['jshint', 'uglify']);
+gulp.task('html', ['htmlmin']);

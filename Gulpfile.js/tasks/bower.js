@@ -1,5 +1,5 @@
 /*
-  images tasks
+  Scripts tasks
   --------------------------------------------------------------------
 
 */
@@ -11,13 +11,10 @@ var gulp          = require('gulp'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
     // specific task config
-    config        = require('../../gulpConfig').images,
+    config        = require('../gulpconfig').bower,
     // specific task modules
-    imagemin      = require('gulp-imagemin'),
-    changed       = require('gulp-changed'),
-    browserSync   = require('browser-sync')
+    bower = require('gulp-bower')
 ;
-
 
 // Error handler
 // ------------------------------
@@ -32,15 +29,12 @@ var onError = function(err) {
   this.emit('end');
 };
 
-
 // Tasks
 // ------------------------------
 
-gulp.task('images', function() {
-  return gulp.src(config.src)
+// Browser sync task
+gulp.task('bower', function() { 
+  return bower()
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(changed(config.dest)) // Ignore unchanged files
-    .pipe(imagemin()) // Optimize
-    .pipe(gulp.dest(config.dest))
-    .pipe(browserSync.reload({stream:true}));
-});
+    .pipe(gulp.dest(config.src));
+}); 

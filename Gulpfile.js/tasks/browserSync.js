@@ -1,5 +1,5 @@
 /*
-  Font icons tasks
+  Scripts tasks
   --------------------------------------------------------------------
 
 */
@@ -11,10 +11,9 @@ var gulp          = require('gulp'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
     // specific task config
-    config        = require('../../gulpConfig').iconfonts,
+    config        = require('../gulpconfig').browserSync,
     // specific task modules
-    bower = require('gulp-bower')
-;
+    browserSync = require('browser-sync').create();
 
 // Error handler
 // ------------------------------
@@ -33,8 +32,11 @@ var onError = function(err) {
 // ------------------------------
 
 // Browser sync task
-gulp.task('iconfonts', function() { 
-  return gulp.src(config.src) 
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(gulp.dest(config.dest)); 
+gulp.task('browserSync', function() { 
+  browserSync.init(config);
+}); 
+
+// BrowserSync reload all Browsers
+gulp.task('browserSync-reload', function () {
+  browserSync.reload();
 });

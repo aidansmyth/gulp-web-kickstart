@@ -11,7 +11,7 @@ var gulp          = require('gulp'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
     // specific task config
-    config        = require('../../gulpConfig').html,
+    config        = require('../gulpconfig').html,
     // specific task modules
     replace       = require('gulp-replace')
 ;

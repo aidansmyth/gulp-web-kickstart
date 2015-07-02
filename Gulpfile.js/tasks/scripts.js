@@ -1,5 +1,5 @@
 /*
-  Style tasks
+  Scripts tasks
   --------------------------------------------------------------------
 
 */
@@ -11,16 +11,15 @@ var gulp          = require('gulp'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
     // specific task config
-    config        = require('../../gulpConfig').sass,
+    config        = require('../gulpconfig').scripts,
     // specific task modules
     size          = require('gulp-filesize'),
     changed       = require('gulp-changed'),
+    uglify        = require('gulp-uglify'),
+    jshint        = require('gulp-jshint'),
+    stylish       = require('jshint-stylish'),
+    concat        = require('gulp-concat'),
     rename        = require('gulp-rename'),
-    rubySass      = require('gulp-ruby-sass'),
-    sourcemaps    = require('gulp-sourcemaps'),
-    autoprefixer  = require('gulp-autoprefixer'),
-    scsslint      = require('gulp-scss-lint'),
-    minifyCss     = require('gulp-minify-css'),
     browserSync   = require('browser-sync')
 ;
 
@@ -40,25 +39,34 @@ var onError = function(err) {
 // Tasks
 // ------------------------------
 
-gulp.task('scss-lint', function() {
-  gulp.src(config.src)
-    .pipe(scsslint());
-});
-
-gulp.task('sass', function() {
-
-    return gulp.src(config.src)
+// Uglify task
+gulp.task('uglify', function() {
+  return gulp.src(config.src)
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(sass(config.settings))
     .pipe(changed(config.dest))
-    .pipe(sourcemaps.init())
-    .pipe(autoprefixer({ browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'] }))
-    .pipe(filter) // Don’t write sourcemaps of sourcemaps
-    .pipe(sourcemaps.write())
-    .pipe(filter.restore()) // Restore original files
+    .pipe(concat('global.js'))
     .pipe(gulp.dest(config.dest))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifyCss())
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest(config.dest))
+    .pipe(size())
     .pipe(browserSync.stream());
 });
+
+// js Lint task
+gulp.task('jshint', function() {
+  return gulp.src(config.src)
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish));
+});
+
+gulp.task('jsCopylibs', function() {
+  return gulp.src(config.libs.src)
+    .pipe(gulp.dest(config.libs.dest))
+})
+
+// Global scripts task
+gulp.task('scripts', ['jshint', 'uglify']);

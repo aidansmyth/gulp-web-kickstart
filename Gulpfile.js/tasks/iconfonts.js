@@ -1,5 +1,5 @@
 /*
-  Scripts tasks
+  Font icons tasks
   --------------------------------------------------------------------
 
 */
@@ -11,11 +11,9 @@ var gulp          = require('gulp'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
     // specific task config
-    config        = require('../../gulpConfig').html,
+    config        = require('../gulpconfig').iconfonts,
     // specific task modules
-    size          = require('gulp-filesize'),
-    changed       = require('gulp-changed'),
-    minifyHTML    = require('gulp-minify-html')
+    bower = require('gulp-bower')
 ;
 
 // Error handler
@@ -34,15 +32,9 @@ var onError = function(err) {
 // Tasks
 // ------------------------------
 
-// Uglify task
-gulp.task('htmlmin', function() {
-  return gulp.src(config.src)
+// Browser sync task
+gulp.task('iconfonts', function() { 
+  return gulp.src(config.src) 
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(changed(config.dest))
-    .pipe(minifyHTML(config.settings))
-    .pipe(gulp.dest(config.dest))
-    .pipe(size());
+    .pipe(gulp.dest(config.dest)); 
 });
-
-// Global scripts task
-gulp.task('html', ['htmlmin']);
