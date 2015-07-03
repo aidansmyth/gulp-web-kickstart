@@ -11,15 +11,20 @@ var project         = '',
     themeType       = 'html', // Not ready for use. Options: 'html', 'wordpress', 'drupal'
     src             = './src',
     build            = './build',
-    dist            = './dist/'+project+'/',
-    bowerDir        = './bower_components';
+    dist            = './dist/'+project,
+    bowerDir        = './bower_components/';
 
 // Project settings
 module.exports = {
   
   bower: {
     src: bowerDir,
-    dest: build
+    dest: build+'/libs',
+    cssFiles: [
+      bowerDir+'/**/*.min.css',
+      bowerDir+'/**/*.{sass,scss}',
+      '!'+bowerDir+'/**/_*.{sass,scss}',
+    ]
   },
 
   browserSync: {
@@ -82,25 +87,25 @@ module.exports = {
 
   styles: {
     build: {
-      src: [src+'scss/*.scss', '!'+src+'scss/_*.scss'], // Ignore partials
-      dest: build
+      src: [src+'/scss/*.scss', '!'+src+'/scss/_*.scss'], // Ignore partials
+      dest: build+'/css'
     },
     dist: {
       src: [dist+'**/*.css', '!'+dist+'**/*.min.css'],
       minify: { keepSpecialComments: 1, roundingPrecision: 3 },
       dest: dist
     },
-    compiler: 'libsass', // Choose a Sass compiler: 'libsass' or 'ruby-sass'
+    compiler: 'libsass',            // Choose a Sass compiler: 'libsass' or 'ruby-sass'
     autoprefixer: { browsers: ['> 3%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ios 6', 'android 4'] },
     rename: { suffix: '.min' },
     minify: { keepSpecialComments: 1, roundingPrecision: 3 },
-    rubySass: {                 // Requires the Ruby implementation of Sass; run `gem install sass` if you use this; Compass is not included by default
-      loadPath: bowerDir,       // Adds the `bower_components` directory to the load path so you can @import directly
+    rubySass: {                     // Requires the Ruby implementation of Sass; run `gem install sass` if you use this; Compass is not included by default
+      loadPath: bowerDir,           // Adds the `bower_components` directory to the load path so you can @import directly
       precision: 6,
-      'sourcemap=none': true    // Not yet ready for prime time; Sass 3.4 has srcmaps on by default but this causes some problems in the Gulp toolchain
+      'sourcemap=none': true        // Not yet ready for prime time; Sass 3.4 has srcmaps on by default but this causes some problems in the Gulp toolchain
     },
-    libsass: {                  // Requires the libsass implementation of Sass
-      includePaths: [bowerDir], // Adds the `bower_components` directory to the load path so you can @import directly
+    libsass: {                      // Requires the libsass implementation of Sass
+      includePaths: [bowerDir],             // Adds the `bower_components` directory to the load path so you can @import directly
       precision: 6
     }
   },

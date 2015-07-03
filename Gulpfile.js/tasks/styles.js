@@ -11,6 +11,7 @@ var gulp          = require('gulp'),
     plugins       = require('gulp-load-plugins')({ camelize: true }),
     // specific task config
     config        = require('../gulpconfig').styles,
+    configBower   = require('../gulpconfig').bower,
     // specific task modules
     autoprefixer  = require('autoprefixer-core')
 ;
@@ -89,6 +90,10 @@ gulp.task('styles-dist', ['utils-dist'], function() {
   .pipe(gulp.dest(config.dist.dest));
 });
 
+// Copy & Concat bower styles
+gulp.task('vendor-styles', function() {
+
+});
 
 // Easily configure the Sass compiler from `../gulpconfig.js`
 gulp.task('styles', ['styles-'+config.compiler]);
