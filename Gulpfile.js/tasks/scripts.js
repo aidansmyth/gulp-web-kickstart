@@ -68,5 +68,10 @@ gulp.task('jsCopylibs', function() {
     .pipe(gulp.dest(config.libs.dest))
 })
 
+// Copy & Concat bower scripts
+gulp.task('vendor-scripts', function() {
+
+});
+
 // Global scripts task
 gulp.task('scripts', ['jshint', 'uglify']);
