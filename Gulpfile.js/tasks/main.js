@@ -20,7 +20,7 @@ gulp.task('watch',['browserSync'], function () {
   // gulp.watch(config.markup.html.src,   ['markup-'+config.markup.type]);
   gulp.watch(config.markup.jade.src,   ['markup-'+config.markup.type]);
   // gulp.watch(config.markup.php.src,   ['markup-'+config.markup.type]);
-  gulp.watch(config.styles.src,   ['styles']);
+  gulp.watch(config.styles.build.src,   ['styles']);
   gulp.watch(config.images.src, ['images']);
   gulp.watch(config.scripts.src, ['scripts']);
 });
