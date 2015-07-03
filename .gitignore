@@ -26,3 +26,4 @@ npm-debug.log
 build/*
 dist/*
 Gulpfile.js/tasks-inactive/*
+src/lib/*
