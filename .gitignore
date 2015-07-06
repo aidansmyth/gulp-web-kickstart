@@ -16,8 +16,14 @@ node_modules
 bower_components
 npm-debug.log
 
+# Sublime generated files #
+###########################
+*.sublime-project
+*.sublime-workspace
+
 # Project files #
 ######################
 build/*
 dist/*
 Gulpfile.js/tasks-inactive/*
+src/lib/* 
