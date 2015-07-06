@@ -4,4 +4,4 @@
 
 // Variables
 // -------------------------------------------------------------------
-console.log("main.js loaded")
+console.log("main.js loaded");
