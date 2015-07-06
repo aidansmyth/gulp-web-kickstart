@@ -27,7 +27,16 @@ gulp.task('bower-init', function() {
 
 // Bower-js-concat
 gulp.task('bower-js-concat', function () {
-
+  return gulp.src(config.jsFiles)
+    .pipe(plugins.plumber({ errorHandler: handleErrors }))
+    .pipe(plugins.concat(config.jsVendorName))
+    .pipe(gulp.dest(config.dest))
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(config.dest));
+    //.pipe(browserSync.stream());
 });
 
 // Bower-style-concat
@@ -36,4 +45,4 @@ gulp.task('bower-style-concat', function () {
 });
 
 // Bower default task
-gulp.task('bower', ['bower-init']);
+gulp.task('bower', ['bower-init', 'bower-js-concat']);

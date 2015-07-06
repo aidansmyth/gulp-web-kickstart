@@ -19,12 +19,19 @@ module.exports = {
   
   bower: {
     src: bowerDir,
-    dest: build+'/libs',
+    dest: build+'/lib',
     cssFiles: [
       bowerDir+'/**/*.min.css',
       bowerDir+'/**/*.{sass,scss}',
       '!'+bowerDir+'/**/_*.{sass,scss}',
-    ]
+    ],
+    cssVendorName: 'vendor.js',
+    jsFiles: [
+      bowerDir+'foundation/js/foundation.min.js',
+      bowerDir+'fastclick/lib/fastclick.js',
+      bowerDir+'jquery.cookie/jquery.cookie.js'
+    ],
+    jsVendorName: 'vendor.js'
   },
 
   browserSync: {
