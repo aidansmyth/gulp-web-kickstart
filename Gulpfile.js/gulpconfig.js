@@ -69,20 +69,10 @@ module.exports = {
     },
   },
 
-  theme: {
-    lang: {
-      src: src+'languages/**/*', // Glob matching any language files you'd like to copy over
-      dest: build+'languages/'
-    },
-    php: {
-      src: src+'**/*.php',
-      dest: build
-    }
-  },
-
   scripts: {
     src: src + '/javascript/**/*.js',
     dest: build + '/js',
+    filename: 'main.js'
   },
 
   styles: {
@@ -118,6 +108,17 @@ module.exports = {
   images: {
     src: src + '/images/**/*.{png,jpg,jpeg,gif,svg}',
     dest: build + '/img'
+  },
+
+    theme: {
+    lang: {
+      src: src+'languages/**/*', // Glob matching any language files you'd like to copy over
+      dest: build+'languages/'
+    },
+    php: {
+      src: src+'**/*.php',
+      dest: build
+    }
   },
   
 };

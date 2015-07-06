@@ -1,46 +1,32 @@
 /*
-  images tasks
+  Images tasks
   --------------------------------------------------------------------
 
 */
 
 // Load requirements
 // ------------------------------
+
 var gulp          = require('gulp'),
     gutil         = require('gulp-util'),
-    plumber       = require('gulp-plumber'),
-    notify        = require('gulp-notify'),
+    handleErrors  = require('../utils/handleErrors'),
+    plugins       = require('gulp-load-plugins')({ camelize: true }),
     // specific task config
-    config        = require('../gulpconfig').images,
+    config        = require('../gulpconfig').images
     // specific task modules
-    imagemin      = require('gulp-imagemin'),
-    changed       = require('gulp-changed'),
-    browserSync   = require('browser-sync')
+    // browserSync   = require('browser-sync')
 ;
-
-
-// Error handler
-// ------------------------------
-var onError = function(err) {
-  notify.onError({
-    title:    "Gulp",
-    subtitle: "Failure!",
-    message:  "Error: <%= error.message %>",
-    sound:    "Beep"
-  })(err);
-
-  this.emit('end');
-};
 
 
 // Tasks
 // ------------------------------
 
+// Optimise images
 gulp.task('images', function() {
   return gulp.src(config.src)
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(changed(config.dest)) // Ignore unchanged files
-    .pipe(imagemin()) // Optimize
-    .pipe(gulp.dest(config.dest))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(plugins.plumber({ errorHandler: handleErrors }))
+    .pipe(plugins.changed(config.dest)) // Ignore unchanged files
+    .pipe(plugins.imagemin()) // Optimize
+    .pipe(gulp.dest(config.dest));
+    // .pipe(browserSync.reload({stream:true}));
 });

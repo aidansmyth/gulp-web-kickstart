@@ -1,32 +1,18 @@
 /*
-  Scripts tasks
+  Browser Sync tasks
   --------------------------------------------------------------------
 
 */
 
 // Load requirements
 // ------------------------------
+
 var gulp          = require('gulp'),
-    gutil         = require('gulp-util'),
-    plumber       = require('gulp-plumber'),
-    notify        = require('gulp-notify'),
     // specific task config
-    config        = require('../gulpconfig').browserSync,
+    config        = require('../gulpconfig').browserSync
     // specific task modules
     browserSync = require('browser-sync').create();
-
-// Error handler
-// ------------------------------
-var onError = function(err) {
-  notify.onError({
-    title:    "Gulp",
-    subtitle: "Failure!",
-    message:  "Error: <%= error.message %>",
-    sound:    "Beep"
-  })(err);
-
-  this.emit('end');
-};
+;
 
 // Tasks
 // ------------------------------

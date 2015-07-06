@@ -13,5 +13,8 @@ var gulp = require('gulp'),
 // Tasks
 // ------------------------------
 
-// Clean task
+// Clean build folder task
 gulp.task('clean');
+
+// Clean dist folder task
+gulp.task('clean-dist');
