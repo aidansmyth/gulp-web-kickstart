@@ -34,7 +34,6 @@ gulp.task('uglify', function() {
       suffix: '.min'
     }))
     .pipe(gulp.dest(config.dest))
-    .pipe(plugins.filesize());
     //.pipe(browserSync.stream());
 });
 

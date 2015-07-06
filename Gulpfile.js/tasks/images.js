@@ -7,12 +7,12 @@
 // Load requirements
 // ------------------------------
 
-var gulp          = require('gulp'),
-    gutil         = require('gulp-util'),
-    handleErrors  = require('../utils/handleErrors'),
-    plugins       = require('gulp-load-plugins')({ camelize: true }),
+var gulp         = require('gulp'),
+    gutil        = require('gulp-util'),
+    handleErrors = require('../utils/handleErrors'),
+    plugins      = require('gulp-load-plugins')({ camelize: true }),
     // specific task config
-    config        = require('../gulpconfig').images
+    config       = require('../gulpconfig').images
     // specific task modules
     // browserSync   = require('browser-sync')
 ;
