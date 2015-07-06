@@ -57,7 +57,12 @@ module.exports = {
       dest: build
     },
     jade: {
-      src: [src+'/jade/**/*.jade', '!'+src+'/jade/_partials/**', '!'+src+'/jade/base.jade'],
+      src: [
+        src+'/jade/**/*.jade',
+        // '!'+src+'/jade/_partials/**',
+        // '!'+src+'/jade/_layouts/**',
+        // '!'+src+'/jade/_mixins/**'
+      ],
       dest: build,
       settings: {
         pretty: true
