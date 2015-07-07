@@ -4,34 +4,31 @@
 // 
 // 
 
-// @import 'bootstrap';
+// Load Foundation
+@import 'settings';
 @import '../../bower_components/foundation/scss/normalize';
 @import '../../bower_components/foundation/scss/foundation';
+
 // @import 'font-awesome';
+
+// Load base files
+@import 'base/variables';
+@import 'base/colors';
+@import 'base/base';
+
 
 // SCSS STYLES
 
 // Variables
-$black: #000;
-$faint-grey: lighten($black, 90%);
-$light-grey: lighten($black, 50%);
-$mid-grey: lighten($black, 20%);
-$dark-grey: lighten($black, 5%);
 
-$red: #bf3130;
-$green: #689b00;
-$blue: #1440ab;
-$yellow: #ff0;
+
+// $test: #fc0;
 
 // Mixins
 
 
 // IMPLEMENTATION
-body {
-  background-color: lighten($black, 90%);
-  color: $dark-grey;
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 
 .row {
   background-color: lighten($black, 80%);
@@ -47,8 +44,10 @@ body {
 }
 
 footer {
-  background: blue;
+  background: $mid-grey;
+
   .row {
-    background: blue;
+    background: $mid-grey;
+    color: $faint-grey;
   }
 }
