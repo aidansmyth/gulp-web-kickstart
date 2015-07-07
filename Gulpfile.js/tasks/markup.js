@@ -24,6 +24,7 @@ gulp.task('markup-html', function() {
   return gulp.src(config.html.src)
     .pipe(plugins.plumber({ errorHandler: handleErrors }))
     .pipe(plugins.changed(config.html.dest))
+    .pipe(gulp.dest(config.html.dest));
 });
 
 // Markup Jade task
@@ -40,6 +41,7 @@ gulp.task('markup-php', function() {
   return gulp.src(config.php.src)
     .pipe(plugins.plumber({ errorHandler: handleErrors }))
     .pipe(plugins.changed(config.php.dest))
+    .pipe(gulp.dest(config.jadephp.dest));
 });
 
 // Global scripts task

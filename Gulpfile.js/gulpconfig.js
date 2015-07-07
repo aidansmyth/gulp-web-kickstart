@@ -50,10 +50,10 @@ module.exports = {
   },
 
   markup: {
-    type: 'jade', // Select markup type: 'html', 'jade', 'php'
+    type: 'html', // Select markup type: 'html', 'jade', 'php'
 
     html: {
-      src: src + '/**/*.html',
+      src: src+'/**/*.html',
       dest: build
     },
     jade: {
@@ -82,9 +82,15 @@ module.exports = {
   },
 
   scripts: {
-    src: src + '/javascript/**/*.js',
+    src: [
+      src + '/javascript/**/*.js',
+      '!'+src+'/javascript/bookmarklet-external.js'
+    ],
     dest: build + '/js',
-    filename: 'main.js'
+    filename: 'main.js',
+    standaloneFiles: [
+      src+'/javascript/bookmarklet-external.js'
+    ]
   },
 
   styles: {

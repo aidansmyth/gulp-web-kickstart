@@ -37,6 +37,20 @@ gulp.task('uglify', function() {
     //.pipe(browserSync.stream());
 });
 
+// Uglify task
+gulp.task('uglify-standalone', function() {
+  return gulp.src(config.standaloneFiles)
+    .pipe(plugins.plumber({ errorHandler: handleErrors }))
+    .pipe(plugins.changed(config.dest))
+    .pipe(gulp.dest(config.dest))
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(config.dest))
+    //.pipe(browserSync.stream());
+});
+
 // js Lint task
 gulp.task('jshint', function() {
   return gulp.src(config.src)
@@ -46,4 +60,4 @@ gulp.task('jshint', function() {
 });
 
 // Global scripts task
-gulp.task('scripts', ['jshint', 'uglify']);
+gulp.task('scripts', ['jshint', 'uglify', 'uglify-standalone']);

@@ -1,29 +1,122 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>HTML5 template</title>
-  <meta name="description" content="HTML5 template">
-  <meta name="author" content="Aidan Smyth <smyth.aidan@gmail.com>">
-
-  <link rel="stylesheet" href="css/style.css">
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-  <div class="container">
-    <h1>Temporary Home page</h1>
-    <a class="mid-button" href="#">
-      Go to page
-    </a>
-    <div class="instructions">
-      <p>Insert instructions here.</p>
-    </div>
-  </div>
-</body>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Jade Foundation Template</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content=""><!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/style.min.css">
+    <body><!--[if lt IE 8]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser.
+        Please <a href="http://browsehappy.com/">upgrade your browser</a>
+        to improve your experience.
+      </p><![endif]-->
+      <div class="contain-to-grid sticky">
+        <nav data-topbar role="navigation" data-options="sticky_on: large" class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#">My Site</a></h1>
+            </li><!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+          <section class="top-bar-section"><!-- Right Nav Section -->
+            <ul class="right">
+              <li class="active"><a href="#">Right Button Active</a></li>
+              <li class="has-dropdown"><a href="#">Right Button Dropdown</a>
+                <ul class="dropdown">
+                  <li><a href="#">First link in dropdown</a></li>
+                  <li class="active"><a href="#">Active link in dropdown</a></li>
+                </ul>
+              </li>
+            </ul><!-- Left Nav Section -->
+            <ul class="left">
+              <li><a href="#">Left Nav Button</a></li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="panel">
+          <h5>Bookmarklet</h5>
+          <p>Drag the button up to your bookmarks bar.</p>
+          <a href="javascript:void%20function(){(function(){s=document.createElement(%22script%22),s.type=%22text/javascript%22,s.src=%22http://localhost:3000/js/bookmarklet-external.min.js%22,document.body.appendChild(s)})()}();" class="button round">Trovalow Bookmarklet</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-8 large-8 columns">
+          <div class="blog-post">
+            <header>
+              <h2>Foo</h2>
+              <div class="post-meta"><span>By Aidan Smyth</span><span class="date">15 January 2015</span></div>
+            </header>
+            <div class="post-content"><img src="http://placehold.it/1024x800/dddddd/000000"/>
+              <p> Lorem ipsum dolor sit amet,. consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+            </div>
+          </div>
+          <div class="blog-post">
+            <header>
+              <h2>Foo</h2>
+              <div class="post-meta"><span>By Aidan Smyth</span><span class="date">15 January 2015</span></div>
+            </header>
+            <div class="post-content"><img src="http://placehold.it/1024x800/dddddd/000000"/>
+              <p> Lorem ipsum dolor sit amet,. consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+            </div>
+          </div>
+          <div class="blog-post">
+            <header>
+              <h2>Foo</h2>
+              <div class="post-meta"><span>By Aidan Smyth</span><span class="date">15 January 2015</span></div>
+            </header>
+            <div class="post-content"><img src="http://placehold.it/1024x800/dddddd/000000"/>
+              <p> Lorem ipsum dolor sit amet,. consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+            </div>
+          </div>
+          <div class="blog-post">
+            <header>
+              <h2>Foo</h2>
+              <div class="post-meta"><span>By Aidan Smyth</span><span class="date">15 January 2015</span></div>
+            </header>
+            <div class="post-content"><img src="http://placehold.it/1024x800/dddddd/000000"/>
+              <p> Lorem ipsum dolor sit amet,. consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.</p>
+            </div>
+          </div>
+        </div>
+        <div class="medium-4 large-4 columns">
+          <h3>Lorem ipsum dolor sit amet..</h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo.
+            <h3>Lorem ipsum dolor sit amet</h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo.</p>
+          </p>
+        </div>
+      </div>
+      <footer>
+        <div class="row">
+          <p>inside footer</p>
+        </div>
+      </footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/lib/jquery-1.11.0.min.js"><\/script>')</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
+      <script src="js/main.min.js"></script>
+    </body>
+  </head>
 </html>
