@@ -89,7 +89,7 @@ module.exports = {
 
   styles: {
     build: {
-      src: [src+'/scss/*.scss', '!'+src+'/scss/_*.scss'], // Ignore partials
+      src: [src+'/scss/**/*.scss', '!'+src+'/scss/**/_*.scss'], // Ignore partials
       dest: build+'/css'
     },
     dist: {
