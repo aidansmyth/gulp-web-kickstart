@@ -3,9 +3,12 @@ extends _layouts/default
 
 //- Include Mixins
 include _mixins/post-types
+include _mixins/media-types
 
 //- Page Content
 block content
+  +video('vimeo', '2822787','400','225')
+  +video('youtube', 'oY59wZdCDo0','400','225')
   +blog-post('Foo','Aidan Smyth')
   +blog-post('Foo','Aidan Smyth')
   +blog-post('Foo','Aidan Smyth')
