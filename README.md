@@ -6,4 +6,5 @@ https://github.com/synapticism/wordpress-gulp-bower-sass
 
 $ npm install -g gulp
 $ npm install
+$ bower install
 $ gulp
