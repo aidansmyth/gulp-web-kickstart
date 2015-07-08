@@ -11,23 +11,18 @@
 
 // @import 'font-awesome';
 
+// 
+@import '../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css';
+@import '../../bower_components/OwlCarousel/owl-carousel/owl.theme.css';
+
 // Load base files
 @import 'base/variables';
 @import 'base/colors';
 @import 'base/base';
 
-
-// SCSS STYLES
-
-// Variables
-
-
-// $test: #fc0;
-
-// Mixins
-
-
-// IMPLEMENTATION
+// Load Modules
+@import 'modules/m-jumbotron';
+@import 'modules/m-carousel';
 
 
 .row {

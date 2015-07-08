@@ -1,0 +1,19 @@
+// 
+// 
+
+.jumbotron {
+  padding: 100px;
+  background: $secondary-color;
+
+  &__title {
+    font-size: 150%;
+  }
+
+  &__text {
+    font-size: 100%;
+  }
+
+  &__button {
+    background: $primary-color;
+  }
+}
