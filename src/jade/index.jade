@@ -16,6 +16,9 @@ include _mixins/media-types
 //- Page Content
 block content
   
+  - var string = siteName
+  h2=string
+  
   +blog-post('Foo','Aidan Smyth')
   +blog-post('Foo','Aidan Smyth')
   +blog-post('Foo','Aidan Smyth')

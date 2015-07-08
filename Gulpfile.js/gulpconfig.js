@@ -35,6 +35,8 @@ module.exports = {
     jsVendorName: 'vendor.js'
   },
 
+
+
   browserSync: {
     files: [build+'/**', '!'+build+'/**.map'],  // Exclude map files
     notify: false,                              // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not)
@@ -50,6 +52,8 @@ module.exports = {
     }
   },
 
+
+
   markup: {
     type: 'jade', // Select markup type: 'html', 'jade', 'php'
 
@@ -57,6 +61,7 @@ module.exports = {
       src: src + '/**/*.html',
       dest: build
     },
+
     jade: {
       src: [
         src+'/jade/**/*.jade',
@@ -67,8 +72,11 @@ module.exports = {
       dest: build,
       settings: {
         pretty: true
-      }
+      },
+      loadData: true,
+      dataFile: src+'/jade/data/site-data.json'
     },
+
     jadePhp:{
       src: [src+'/jade/**/*.jade', '!'+src+'/jade/layouts/**'],
       dest: build,
@@ -76,6 +84,7 @@ module.exports = {
         pretty: true
       }
     },
+
     php: {
       src: src + '/**/*.php',
       dest: build,
@@ -87,6 +96,8 @@ module.exports = {
     dest: build + '/js',
     filename: 'main.js'
   },
+
+
 
   styles: {
     build: {
@@ -102,21 +113,27 @@ module.exports = {
     autoprefixer: { browsers: ['> 3%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ios 6', 'android 4'] },
     rename: { suffix: '.min' },
     minify: { keepSpecialComments: 1, roundingPrecision: 3 },
+    
     rubySass: {                     // Requires the Ruby implementation of Sass; run `gem install sass` if you use this; Compass is not included by default
       loadPath: bowerDir,           // Adds the `bower_components` directory to the load path so you can @import directly
       precision: 6,
       'sourcemap=none': true        // Not yet ready for prime time; Sass 3.4 has srcmaps on by default but this causes some problems in the Gulp toolchain
     },
+    
     libsass: {                      // Requires the libsass implementation of Sass
       includePaths: [bowerDir],             // Adds the `bower_components` directory to the load path so you can @import directly
       precision: 6
     }
   },
 
+
+
   iconfonts: {
     src: bowerDir + '/fontawesome/fonts/**.*',
     dest: build + '/fonts'
   },
+
+
 
   images: {
     src: src + '/images/**/*.{png,jpg,jpeg,gif,svg}',
