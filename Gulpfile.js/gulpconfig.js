@@ -25,11 +25,12 @@ module.exports = {
       bowerDir+'/**/*.{sass,scss}',
       '!'+bowerDir+'/**/_*.{sass,scss}',
     ],
-    cssVendorName: 'vendor.js',
+    cssVendorName: 'vendor.css',
     jsFiles: [
-      bowerDir+'foundation/js/foundation.min.js',
-      bowerDir+'fastclick/lib/fastclick.js',
-      bowerDir+'jquery.cookie/jquery.cookie.js'
+      bowerDir+'foundation/js/foundation.js',
+      // bowerDir+'fastclick/lib/fastclick.js',
+      bowerDir+'OwlCarousel/owl-carousel/owl.carousel.js'
+      // bowerDir+'jquery.cookie/jquery.cookie.js'
     ],
     jsVendorName: 'vendor.js'
   },
@@ -59,9 +60,9 @@ module.exports = {
     jade: {
       src: [
         src+'/jade/**/*.jade',
-        // '!'+src+'/jade/_partials/**',
-        // '!'+src+'/jade/_layouts/**',
-        // '!'+src+'/jade/_mixins/**'
+        '!'+src+'/jade/_partials/**',
+        '!'+src+'/jade/_layouts/**',
+        '!'+src+'/jade/_mixins/**'
       ],
       dest: build,
       settings: {
