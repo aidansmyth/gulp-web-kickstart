@@ -1,4 +1,18 @@
 {
 	"siteName": "Temp Website Name",
-	"rootPath": "http://localhost:3000"
+	"siteCaption": "Something something something dark side...",
+	"rootPath": "http://localhost:3000",
+	"navigation": {
+		"Home": "",
+		"homePages": "",
+	},
+	"pageContent": {
+		"staticPage": {
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores inventore a eveniet commodi modi totam id sapiente officia necessitatibus similique cum explicabo doloremque, tempore perferendis possimus quidem! Molestias, reprehenderit mollitia.",
+			"meta": {
+
+			},
+			"bodyText": "Lorem"
+		}
+	}
 }
