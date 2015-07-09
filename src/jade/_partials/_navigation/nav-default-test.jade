@@ -68,26 +68,15 @@
                   - } else {
                   li.has-dropdown.not-click
                     a(href="#{dm2[u].link}")= dm2[u].name
-                    li: label Dropdown level three
-                    a(href="#{dm2[u].link}")= dm2[u].name
-                    //- ul.dropdown
-                  - }
-                  - }
-              - }
-              - }
+                    ul.dropdown
+                      li: label Dropdown level three
+                      - dm3 = dm2[u].sub
+                      - for (var y=0;y<dm3.length;y++) {
+                      li: a(href="#{dm3[y].link}")= dm3[y].name
+                      - } //- End 4th for
+                  - } //- End 3rd if
+                  - } //- End 3rd for
+              - } //- End 2nd if
+              - } //- End 2nd for
           - } //- End 1st if
           - } //- End 1st for
-        //-   li.active
-        //-     a(href="#") Right Button Active
-        //-   li.has-dropdown
-        //-     a(href="#") Right Button Dropdown
-        //-     ul.dropdown
-        //-       li
-        //-         a(href="#") First link in dropdown
-        //-       li.active
-        //-         a(href="#") Active link in dropdown
-        //- <!-- Left Nav Section -->
-        //- ul.left
-        //-   li
-        //-     a(href="#{r}") Home page
-p= dm1

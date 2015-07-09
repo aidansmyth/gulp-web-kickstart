@@ -4,15 +4,49 @@
 	"rootPath": "http://localhost:3000",
 	"navigation": {
 		"Home": "",
-		"homePages": "",
+		"homePages": ""
+	
 	},
-	"pageContent": {
-		"staticPage": {
-			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores inventore a eveniet commodi modi totam id sapiente officia necessitatibus similique cum explicabo doloremque, tempore perferendis possimus quidem! Molestias, reprehenderit mollitia.",
-			"meta": {
+	"menu": [
+             {"name": "Menu item #1", "link": "#", "sub": null},
+             {"name": "Menu item #2", "link": "#", "sub": 
+                [
+                   {"name": "Sub item #1","link": "#", "sub": null},
+                   {"name": "Sub item #2","link": "#", "sub": null},
+                   {"name": "Sub item #3","#": "0-2", "sub": null}
+                ]
+             },
+             {"name": "Menu item #3", "link": "#", "sub": 
+                [
+                   {"name": "Sub item #1","link": "#", "sub": null},
+                   {"name": "Sub item #2","link": "#", "sub":  
+	                  	[
+	                  			{"name": "Sub sub item #1","link": "#", "sub": null},
+	                  			{"name": "Sub sub item #2","link": "#", "sub":  
+			                  	[
+			                  			{"name": "Sub sub sub item #1","link": "#", "sub": null},
+			                  			{"name": "Sub sub sub item #2","link": "#", "sub": null},
+			                  			{"name": "Sub sub sub item #3","link": "#", "sub": null}
+			                  	]
+	                  	},
+	                  			{"name": "Sub sub item #3","link": "#", "sub": null}
+	                  	]
+	                  }
+                ]
+              },        
+              {"name": "Menu item #4", "link": "#","sub": 
+                [
+                   {"name": "Sub item #1","link": "#", "sub": null},
+                   {"name": "Sub item #2","link": "#", "sub": 
+	                  	[
+	                  			{"name": "Sub sub item #1","link": "#", "sub": null},
+	                  			{"name": "Sub sub item #2","link": "#", "sub": null},
+	                  			{"name": "Sub sub item #3","link": "#", "sub": null}
+	                  	]
+                 }
+                ]
+              }
+          ],
 
-			},
-			"bodyText": "Lorem"
-		}
-	}
+  "documentation": []
 }
