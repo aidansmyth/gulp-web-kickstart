@@ -2,7 +2,10 @@ doctype
 html(lang="en").no-js
   head
     meta(charset='utf-8')
-    title Jade Foundation Template
+
+    block pagetitle
+        title base page
+
     meta(name="HandheldFriendly" content="True")
     meta(name='MobileOptimized' content='320')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -12,13 +15,13 @@ html(lang="en").no-js
     meta(name='author' content='')
     
     <!-- Place favicon.ico in the root directory -->
-    link(rel='apple-touch-icon' href='img/touch/apple-touch-icon.png')
+    link(rel='apple-touch-icon' href='#{rootPath}img/touch/apple-touch-icon.png')
     
 
     block styles
 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
-    link(rel='stylesheet', href='css/style.min.css')
+    link(rel='stylesheet', href='#{rootPath}css/style.min.css')
 
     body
         <!--[if lt IE 8]>
@@ -40,8 +43,8 @@ html(lang="en").no-js
         //- Add extra scripts
         block scripts
 
-        script(src='js/main.min.js')
-        script(src='lib/vendor.min.js')
+        script(src='#{rootPath}js/main.js')
+        script(src='#{rootPath}lib/vendor.js')
 
         //- Google Analytics: change UA-XXXXX-X to be your site's ID.
         //-
