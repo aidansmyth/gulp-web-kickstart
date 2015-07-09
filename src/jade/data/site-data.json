@@ -1,7 +1,7 @@
 {
-	"siteName": "Temp Website Name",
+	"siteName": "Gulp Web Kickstart",
 	"siteCaption": "Something something something dark side...",
-	"rootPath": "http://localhost:3000",
+	"rootPath": "http://localhost:3000/",
 	"navigation": {
 		"Home": "",
 		"homePages": ""
@@ -45,7 +45,8 @@
 	                  	]
                  }
                 ]
-              }
+              },
+              {"name": "Cheatsheet","link": "cheatsheet/cheatsheet.html", "sub": null}
           ],
 
   "documentation": []
