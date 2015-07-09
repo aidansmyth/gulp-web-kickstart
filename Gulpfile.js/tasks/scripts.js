@@ -30,6 +30,7 @@ gulp.task('uglify', function() {
     .pipe(plugins.concat(config.filename))
     .pipe(gulp.dest(config.dest))
     .pipe(plugins.uglify())
+    .pipe(plugins.changed(config.dest)) // Ignore unchanged files
     .pipe(plugins.rename({
       suffix: '.min'
     }))
