@@ -1,0 +1,93 @@
+//- Navigation default partial
+//- 
+
+//- Add dependencies
+//--------------------------------------------------------------------
+
+
+//- Load variables
+//--------------------------------------------------------------------
+- var s = siteName
+- var r = rootPath
+- var m = menu
+- var dm1 = []
+- var dm2 = []
+- var dm3 = []
+
+
+//- Functions
+//--------------------------------------------------------------------
+- var buildMenuItem = function(menuItem) {
+-   var x = 1;
+- }
+
+- var buildMenuDrop = function(dropItem) {
+-   var y = 2;
+- }
+
+
+//- Start template
+//--------------------------------------------------------------------
+
+.contain-to-grid.sticky
+    nav(class="top-bar" data-topbar role="navigation" data-options="is_hover: true")
+      ul.title-area
+        li.name
+          h1
+            a(href="#{r}")= s
+
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        li.toggle-topbar.menu-icon
+          a(href="#{r}")
+            span Menu
+
+      section.top-bar-section
+        <!-- Right Nav Section -->
+        ul.right
+          - for (var i=0;i<m.length;i++) {
+          - if (m[i].sub == null) {
+          li: a(href="#{m[i].link}")= m[i].name
+          - } else {
+          li.has-dropdown.not-click
+            a(href="#{m[i].link}")= m[i].name
+            ul.dropdown
+              li: label Dropdown level One
+              - dm1 = m[i].sub
+              - for (var e=0;e<dm1.length;e++) {
+              - if (dm1[e].sub == null) {
+              li: a(href="#{dm1[e].link}")= dm1[e].name
+              - } else {
+              li.has-dropdown.not-click
+                a(href="#{dm1[e].link}")= dm1[e].name
+                ul.dropdown
+                  li: label Dropdown level two
+                  - dm2 = dm1[e].sub
+                  - for (var u=0;u<dm2.length;u++) {
+                  - if (dm2[u].sub == null) {
+                  li: a(href="#{dm2[u].link}")= dm2[u].name
+                  - } else {
+                  li.has-dropdown.not-click
+                    a(href="#{dm2[u].link}")= dm2[u].name
+                    li: label Dropdown level three
+                    a(href="#{dm2[u].link}")= dm2[u].name
+                    //- ul.dropdown
+                  - }
+                  - }
+              - }
+              - }
+          - } //- End 1st if
+          - } //- End 1st for
+        //-   li.active
+        //-     a(href="#") Right Button Active
+        //-   li.has-dropdown
+        //-     a(href="#") Right Button Dropdown
+        //-     ul.dropdown
+        //-       li
+        //-         a(href="#") First link in dropdown
+        //-       li.active
+        //-         a(href="#") Active link in dropdown
+        //- <!-- Left Nav Section -->
+        //- ul.left
+        //-   li
+        //-     a(href="#{r}") Home page
+p= dm1
