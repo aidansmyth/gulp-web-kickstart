@@ -133,14 +133,26 @@ module.exports = {
     dest: build + '/fonts'
   },
 
-
+  utils: {
+    // A glob matching junk files to clean out of `build`
+    clean: [ 
+      build+'**/.DS_Store'
+    ],
+    // Clean this out before creating a new distribution copy
+    wipeDist: [dist],
+    wipeBuild: [build],
+    dist: {
+      src: [build+'**/*', '!'+build+'**/*.min.css'],
+      dest: dist
+    }
+  },
 
   images: {
     src: src + '/images/**/*.{png,jpg,jpeg,gif,svg}',
     dest: build + '/img'
   },
 
-    theme: {
+  theme: {
     lang: {
       src: src+'languages/**/*', // Glob matching any language files you'd like to copy over
       dest: build+'languages/'
