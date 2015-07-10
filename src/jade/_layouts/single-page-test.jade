@@ -8,7 +8,7 @@ extends _layouts/default-test
 
 //- Include Mixins
 include _mixins/post-types
-include _mixins/media-types
+include _mixins/headlines
 
 //- Start template
 //--------------------------------------------------------------------
@@ -20,6 +20,7 @@ block pagetitle
 //- Page Content
 block content
   
+  +headline('Lorem ipsum dolor sit amet..','  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo.')
   +blog-post('Foo','Aidan Smyth')
 
 //- Page Content

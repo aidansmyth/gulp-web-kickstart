@@ -6,8 +6,9 @@ block pagetitle
 //- Page Body
 block body
   
-  //- Add header template
-  include ../_partials/_header/header-default
+  block header
+    //- Add header template
+    //- include ../_partials/_header/header-default
 
   .row
     .medium-8.large-8.columns
@@ -21,5 +22,6 @@ block body
       block sidebar
 
 
-  //- Add footer template
-  include ../_partials/_footer/footer-default
+  block footer
+    //- Add footer template
+    //- include ../_partials/_footer/footer-default

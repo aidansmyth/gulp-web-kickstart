@@ -17,6 +17,9 @@ include _mixins/media-types
 block pagetitle
     title #{siteName}
 
+block header
+  include _partials/_header/header-default
+
 //- Page Content
 block content
   
@@ -35,3 +38,6 @@ block sidebar
 
     h3 Lorem ipsum dolor sit amet
     p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo.
+
+block footer
+  include _partials/_footer/footer-default

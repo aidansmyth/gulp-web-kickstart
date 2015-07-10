@@ -1,10 +1,6 @@
 //- Navigation default partial
 //- 
 
-//- Add dependencies
-//--------------------------------------------------------------------
-
-
 //- Load variables
 //--------------------------------------------------------------------
 - var s = siteName
@@ -17,20 +13,17 @@
 
 //- Functions
 //--------------------------------------------------------------------
-- var buildMenuItem = function(menuItem) {
--   var x = 1;
-- }
 
-- var buildMenuDrop = function(dropItem) {
--   var y = 2;
-- }
+
+//- Add dependencies
+//--------------------------------------------------------------------
 
 
 //- Start template
 //--------------------------------------------------------------------
 
 .contain-to-grid.sticky
-    nav(class="top-bar" data-topbar role="navigation" data-options="sticky_on: large")
+    nav(class="top-bar nav-transparent" data-topbar role="navigation" data-options="sticky_on: large")
       ul.title-area
         li.name
           h1
@@ -80,4 +73,3 @@
               - } //- End 2nd for
           - } //- End 1st if
           - } //- End 1st for
-          
