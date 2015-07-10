@@ -149,6 +149,7 @@ module.exports = {
 
   images: {
     src: src + '/images/**/*.{png,jpg,jpeg,gif,svg}',
+    extraImages: src + '/images/**/*.ico',
     dest: build + '/img'
   },
 
