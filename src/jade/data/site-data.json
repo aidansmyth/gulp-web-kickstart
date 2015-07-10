@@ -4,7 +4,7 @@
 	"rootPath": "http://localhost:3000/",
   "menus": {
   	"mainMenu": [
-               {"name": "Introduction", "link": "introduction.html", "sub": null},
+               {"name": "Introduction", "link": "pages/introduction.html", "sub": null},
                {"name": "Menu item #2", "Components": "#", "sub": 
                   [
                      {"name": "Sub item #1","link": "#", "sub": null},
@@ -32,7 +32,7 @@
                 },        
                 {"name": "Menu item #4", "link": "#","sub": 
                   [
-                     {"name": "Test page","link": "single-page-test.html", "sub": null},
+                     {"name": "Test page","link": "pages/single-page-test.html", "sub": null},
                      {"name": "Sub item #2","link": "#", "sub": 
   	                  	[
   	                  			{"name": "Sub sub item #1","link": "#", "sub": null},
@@ -42,7 +42,7 @@
                    }
                   ]
                 },
-                {"name": "Cheatsheet","link": "cheatsheet/cheatsheet.html", "sub": null}
+                {"name": "Cheatsheet","link": "pages/cheatsheet.html", "sub": null}
             ],
 
     "footerMenu": [

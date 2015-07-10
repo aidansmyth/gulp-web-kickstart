@@ -1,8 +1,11 @@
+//- Base HTML template
+//- 
 doctype
 html(lang="en").no-js
   head
     meta(charset='utf-8')
 
+    //- Page title block
     block pagetitle
         title base page
 
@@ -19,7 +22,7 @@ html(lang="en").no-js
     link(rel="icon" type="image/png" href="#{rootPath}img/touch/apple-touch-icon.png")
     link(rel='apple-touch-icon' href='#{rootPath}img/touch/apple-touch-icon.png')
     
-
+    //- Styles block
     block styles
 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
@@ -33,15 +36,13 @@ html(lang="en").no-js
           | to improve your experience.
         <![endif]-->
 
-        //- Add body elements
+        //- Add body contents
         block body
 
 
         script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
         script window.jQuery || document.write('<script src="js/lib/jquery-1.11.0.min.js"><\/script>')
-        //- script(src='lib/vendor.min.js')
-        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js')
-
+        
         //- Add extra scripts
         block scripts
 

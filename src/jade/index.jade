@@ -4,32 +4,26 @@
 //- Add dependencies
 //--------------------------------------------------------------------
 //- Load base template
-extends _layouts/default
+extends _partials/layouts/default
 
 //- Include Mixins
-include _mixins/post-types
-include _mixins/media-types
+include _partials/mixins/post-types
 
 //- Start template
 //--------------------------------------------------------------------
 
 //- Page title
 block pagetitle
-    title #{siteName}
+  title #{siteName}
 
+//- Page Content
 block header
-  include _partials/_header/header-default
+  include _partials/components/headers/header-default
 
 //- Page Content
 block content
-  
-  - var string = siteName
-  h2=string
-  
-  +blog-post('Foo','Aidan Smyth')
-  +blog-post('Foo','Aidan Smyth')
-  +blog-post('Foo','Aidan Smyth')
-  +blog-post('Foo','Aidan Smyth')
+  +blog-post('Foo','John Doe')
+  +blog-post('Foo','John Doe')
 
 //- Page Content
 block sidebar
@@ -39,5 +33,6 @@ block sidebar
     h3 Lorem ipsum dolor sit amet
     p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo. Autem ea consequatur tempora deleniti reiciendis totam veritatis aspernatur quas laboriosam soluta quos minima, aliquam magni minus, non eos quibusdam placeat quo.
 
+//- Page Content
 block footer
-  include _partials/_footer/footer-default
+  include _partials/components/footers/footer-default

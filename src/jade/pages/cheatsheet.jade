@@ -4,7 +4,7 @@
 //- Add dependencies
 //--------------------------------------------------------------------
 //- Load base template
-extends ../_layouts/default
+extends ../_partials/layouts/default
 
 //- Include Mixins
 
@@ -14,10 +14,10 @@ extends ../_layouts/default
 
 //- Page title
 block pagetitle
-  title cheatsheet | #{siteName}
+  title Cheatsheet | #{siteName}
 
 block header
-  include ../_partials/_header/header-default
+  include ../_partials/components/headers/header-default
 
 //- 
 block sidebar
@@ -28,4 +28,4 @@ block content
   h2 Template Cheatsheet
 
 block footer
-  include ../_partials/_footer/footer-default
+  include ../_partials/components/footers/footer-default
