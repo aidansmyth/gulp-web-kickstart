@@ -1,0 +1,40 @@
+//- Blog post minxins
+//- 
+
+//- Add dependencies
+//--------------------------------------------------------------------
+
+
+//- Load variables
+//--------------------------------------------------------------------
+//- - var x = ""
+
+
+//- Functions
+//--------------------------------------------------------------------
+
+
+
+//- Start mixins
+//--------------------------------------------------------------------
+
+//- Blog Post Mixin
+mixin blog-post(title,author,category,tags)
+	.blog-post
+		header
+			h2 #{title}
+			.post-meta
+				span By #{author}
+				span.date 15 January 2015
+		.post-content
+			img(src="http://placehold.it/1024x800/dddddd/000000")
+			p  Lorem ipsum dolor sit amet,. consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.
+			p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.
+			p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.
+			p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.
+
+//- Blog post preview
+mixin blog-post-preview(title,author,category,tags)
+	.blog-post-preview
+		
+		

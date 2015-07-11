@@ -10,11 +10,13 @@ Introduction Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis 
   3. Footers
   4. Sidebars
 3. Partials: Mixins
-  1. Standard 
+  1. Content 
   2. Media
-  3. Features
-  4. Portfolio
-  5. Ecommerce
+  3. Lists
+  4. Forms
+  5. Features
+  6. Portfolio
+  7. Ecommerce
 4. Partials: Layouts
   1. Home pages
   2. Standard
@@ -133,14 +135,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex maiores eligendi qu
       + +carousel-full-overlay()
       + +carousel-thumbnail()
       + +carousel-thumbnail-overlay()
-* forms
+* Forms
     - Contact form
     - Subscription form
     - Comment form
 * Portfolio
     - portfolio-item
     - portfolio-item-preview
-* Pages
+* Content
     - blog-post
     - blog-post-preview
     - article

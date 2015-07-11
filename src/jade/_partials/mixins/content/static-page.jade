@@ -1,4 +1,4 @@
-//- Post type minxins
+//- Blog post minxins
 //- 
 
 //- Add dependencies
@@ -19,7 +19,7 @@
 //--------------------------------------------------------------------
 
 //- Blog Post Mixin
-mixin blog-post(title,author,category,tags)
+mixin page(title,author,category,tags)
 	.blog-post
 		header
 			h2 #{title}
@@ -34,13 +34,6 @@ mixin blog-post(title,author,category,tags)
 			p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur labore adipisci dolorum. Amet, nostrum libero facere quis laborum ad dolorum labore officia, a tempora ut, dolore modi commodi nulla soluta.
 
 //- Blog post preview
-mixin blog-post-preview(title,author,category,tags)
+mixin page-preview(title,author,category,tags)
 	.blog-post-preview
-
-//- Article mixin
-mixin article(title,author,category,tags)
-	.article
-
-//- Article preview
-mixin article-preview(title,author,category,tags)
-	.article-preview
+		
