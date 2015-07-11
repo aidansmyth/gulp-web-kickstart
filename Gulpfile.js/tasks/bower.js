@@ -1,5 +1,5 @@
 /*
-  Scripts tasks
+  Bower tasks
   --------------------------------------------------------------------
 
 */
@@ -8,33 +8,41 @@
 // ------------------------------
 var gulp          = require('gulp'),
     gutil         = require('gulp-util'),
-    plumber       = require('gulp-plumber'),
-    notify        = require('gulp-notify'),
+    handleErrors  = require('../utils/handleErrors'),
+    plugins       = require('gulp-load-plugins')({ camelize: true }),
     // specific task config
-    config        = require('../gulpconfig').bower,
+    config        = require('../gulpconfig').bower
     // specific task modules
-    bower = require('gulp-bower')
 ;
-
-// Error handler
-// ------------------------------
-var onError = function(err) {
-  notify.onError({
-    title:    "Gulp",
-    subtitle: "Failure!",
-    message:  "Error: <%= error.message %>",
-    sound:    "Beep"
-  })(err);
-
-  this.emit('end');
-};
 
 // Tasks
 // ------------------------------
 
-// Browser sync task
-gulp.task('bower', function() { 
-  return bower()
-    .pipe(plumber({ errorHandler: onError }))
+// Bower sync task
+gulp.task('bower-init', function() { 
+  return plugins.bower()
+    .pipe(plugins.plumber({ errorHandler: handleErrors }))
     .pipe(gulp.dest(config.src));
 }); 
+
+// Bower-js-concat
+gulp.task('bower-js-concat', function () {
+  return gulp.src(config.jsFiles)
+    .pipe(plugins.plumber({ errorHandler: handleErrors }))
+    .pipe(plugins.concat(config.jsVendorName))
+    .pipe(gulp.dest(config.dest))
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(config.dest));
+    //.pipe(browserSync.stream());
+});
+
+// Bower-style-concat
+gulp.task('bower-style-concat', function () {
+
+});
+
+// Bower default task
+gulp.task('bower', ['bower-init', 'bower-js-concat']);

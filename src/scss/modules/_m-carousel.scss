@@ -1,0 +1,14 @@
+// 
+// 
+
+.owl-item {
+
+  &__overlay {
+    color: $white;
+    display: block;
+    font-size: 100%;
+    padding: 10%;
+    position: absolute;
+  }
+
+}

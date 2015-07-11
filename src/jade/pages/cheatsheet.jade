@@ -1,0 +1,31 @@
+//- Index template
+//- 
+
+//- Add dependencies
+//--------------------------------------------------------------------
+//- Load base template
+extends ../_partials/layouts/default
+
+//- Include Mixins
+
+
+//- Start template
+//--------------------------------------------------------------------
+
+//- Page title
+block pagetitle
+  title Cheatsheet | #{siteName}
+
+block header
+  include ../_partials/components/headers/header-default
+
+//- 
+block sidebar
+  p side nav
+
+//- Page Content
+block content
+  h2 Template Cheatsheet
+
+block footer
+  include ../_partials/components/footers/footer-default

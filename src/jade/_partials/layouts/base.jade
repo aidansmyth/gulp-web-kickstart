@@ -1,0 +1,60 @@
+//- Base HTML template
+//- 
+doctype
+html(lang="en").no-js
+  head
+    meta(charset='utf-8')
+
+    //- Page title block
+    block pagetitle
+        title base page
+
+    meta(name="HandheldFriendly" content="True")
+    meta(name='MobileOptimized' content='320')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    meta(name='description', content='')
+    meta(name='author' content='')
+    
+    <!-- Place favicon.ico in the root directory -->
+    link(rel="shortcut icon" href="#{rootPath}img/favicon.ico")
+    link(rel="icon" type="image/png" href="#{rootPath}img/touch/apple-touch-icon.png")
+    link(rel='apple-touch-icon' href='#{rootPath}img/touch/apple-touch-icon.png')
+    
+    //- Styles block
+    block styles
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    link(rel='stylesheet', href='#{rootPath}css/style.min.css')
+
+    body
+        <!--[if lt IE 8]>
+        p.browsehappy
+          | You are using an <strong>outdated</strong> browser.
+          | Please <a href="http://browsehappy.com/">upgrade your browser</a>
+          | to improve your experience.
+        <![endif]-->
+
+        //- Add body contents
+        block body
+
+
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script window.jQuery || document.write('<script src="js/lib/jquery-1.11.0.min.js"><\/script>')
+        
+        //- Add extra scripts
+        block scripts
+
+        script(src='#{rootPath}js/main.js')
+        script(src='#{rootPath}lib/vendor.js')
+
+        //- Google Analytics: change UA-XXXXX-X to be your site's ID.
+        //-
+          script
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');

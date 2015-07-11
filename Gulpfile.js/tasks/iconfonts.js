@@ -1,40 +1,27 @@
 /*
-  Font icons tasks
+  Icon font tasks
   --------------------------------------------------------------------
 
 */
 
 // Load requirements
 // ------------------------------
+
 var gulp          = require('gulp'),
     gutil         = require('gulp-util'),
-    plumber       = require('gulp-plumber'),
-    notify        = require('gulp-notify'),
+    handleErrors  = require('../utils/handleErrors'),
+    plugins       = require('gulp-load-plugins')({ camelize: true }),
     // specific task config
-    config        = require('../gulpconfig').iconfonts,
+    config        = require('../gulpconfig').iconfonts
     // specific task modules
-    bower = require('gulp-bower')
 ;
-
-// Error handler
-// ------------------------------
-var onError = function(err) {
-  notify.onError({
-    title:    "Gulp",
-    subtitle: "Failure!",
-    message:  "Error: <%= error.message %>",
-    sound:    "Beep"
-  })(err);
-
-  this.emit('end');
-};
 
 // Tasks
 // ------------------------------
 
-// Browser sync task
+// iconfonts task
 gulp.task('iconfonts', function() { 
   return gulp.src(config.src) 
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plugins.plumber({ errorHandler: handleErrors }))
     .pipe(gulp.dest(config.dest)); 
 });

@@ -1,0 +1,64 @@
+{
+	"siteName": "Gulp Web Kickstart",
+	"siteCaption": "Something something something dark side...",
+	"rootPath": "http://localhost:3000/",
+  "menus": {
+  	"mainMenu": [
+               {"name": "Introduction", "link": "pages/introduction.html", "sub": null},
+               {"name": "Menu item #2", "Components": "#", "sub": 
+                  [
+                     {"name": "Sub item #1","link": "#", "sub": null},
+                     {"name": "Sub item #2","link": "#", "sub": null},
+                     {"name": "Sub item #3","#": "0-2", "sub": null}
+                  ]
+               },
+               {"name": "Menu item #3", "link": "#", "sub": 
+                  [
+                     {"name": "Sub item #1","link": "#", "sub": null},
+                     {"name": "Sub item #2","link": "#", "sub":  
+  	                  	[
+  	                  			{"name": "Sub sub item #1","link": "#", "sub": null},
+  	                  			{"name": "Sub sub item #2","link": "#", "sub":  
+  			                  	[
+  			                  			{"name": "Sub sub sub item #1","link": "#", "sub": null},
+  			                  			{"name": "Sub sub sub item #2","link": "#", "sub": null},
+  			                  			{"name": "Sub sub sub item #3","link": "#", "sub": null}
+  			                  	]
+  	                  	},
+  	                  			{"name": "Sub sub item #3","link": "#", "sub": null}
+  	                  	]
+  	                  }
+                  ]
+                },        
+                {"name": "Menu item #4", "link": "#","sub": 
+                  [
+                     {"name": "Test page","link": "pages/single-page-test.html", "sub": null},
+                     {"name": "Sub item #2","link": "#", "sub": 
+  	                  	[
+  	                  			{"name": "Sub sub item #1","link": "#", "sub": null},
+  	                  			{"name": "Sub sub item #2","link": "#", "sub": null},
+  	                  			{"name": "Sub sub item #3","link": "#", "sub": null}
+  	                  	]
+                   }
+                  ]
+                },
+                {"name": "Cheatsheet","link": "pages/cheatsheet.html", "sub": null}
+            ],
+
+    "footerMenu": [
+      {"name": "Introduction", "link": "introduction.html", "sub": null},
+      {"name": "Introduction", "link": "introduction.html", "sub": null},
+      {"name": "Introduction", "link": "introduction.html", "sub": null},
+      {"name": "Introduction", "link": "introduction.html", "sub": null}
+    ]
+  },
+
+  "documentation": {
+    "docMenu": [
+      {"name": "Something", "link": "#", "sub": null},
+      {"name": "Something", "link": "#", "sub": null},
+      {"name": "Something", "link": "#", "sub": null},
+      {"name": "Dark side!", "link": "#", "sub": null}
+    ]
+  }
+}

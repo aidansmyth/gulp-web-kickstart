@@ -11,8 +11,9 @@ var gulp          = require('gulp'),
     handleErrors  = require('../utils/handleErrors'),
     plugins       = require('gulp-load-plugins')({ camelize: true }),
     // specific task config
-    config        = require('../gulpconfig').markup
+    config        = require('../gulpconfig').markup,
     // specific task modules
+    fs            = require('fs')
 ;
 
 
@@ -23,15 +24,19 @@ var gulp          = require('gulp'),
 gulp.task('markup-html', function() {
   return gulp.src(config.html.src)
     .pipe(plugins.plumber({ errorHandler: handleErrors }))
-    .pipe(plugins.changed(config.html.dest))
+    .pipe(plugins.changed(config.html.dest));
 });
 
 // Markup Jade task
 gulp.task('markup-jade', function() {
   return gulp.src(config.jade.src)
     .pipe(plugins.plumber({ errorHandler: handleErrors }))
+    // .pipe(plugins.changed(config.jade.dest, {extension: '.html'}))
+    .pipe(plugins.data(function (file) {
+      // return require(config.jade.dataFile)
+      return JSON.parse(fs.readFileSync(config.jade.dataFile));
+    }))
     .pipe(plugins.jade(config.jade.settings))
-    // .pipe(plugins.changed(config.jade.dest))
     .pipe(gulp.dest(config.jade.dest));
 });
 
@@ -39,7 +44,7 @@ gulp.task('markup-jade', function() {
 gulp.task('markup-php', function() {
   return gulp.src(config.php.src)
     .pipe(plugins.plumber({ errorHandler: handleErrors }))
-    .pipe(plugins.changed(config.php.dest))
+    // .pipe(plugins.changed(config.php.dest, {extension: '.php'}))
 });
 
 // Global scripts task

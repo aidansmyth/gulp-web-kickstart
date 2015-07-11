@@ -19,13 +19,23 @@ module.exports = {
   
   bower: {
     src: bowerDir,
-    dest: build+'/libs',
+    dest: build+'/lib',
     cssFiles: [
       bowerDir+'/**/*.min.css',
       bowerDir+'/**/*.{sass,scss}',
       '!'+bowerDir+'/**/_*.{sass,scss}',
-    ]
+    ],
+    cssVendorName: 'vendor.css',
+    jsFiles: [
+      bowerDir+'foundation/js/foundation.js',
+      // bowerDir+'fastclick/lib/fastclick.js',
+      bowerDir+'OwlCarousel/owl-carousel/owl.carousel.js'
+      // bowerDir+'jquery.cookie/jquery.cookie.js'
+    ],
+    jsVendorName: 'vendor.js'
   },
+
+
 
   browserSync: {
     files: [build+'/**', '!'+build+'/**.map'],  // Exclude map files
@@ -42,6 +52,8 @@ module.exports = {
     }
   },
 
+
+
   markup: {
     type: 'jade', // Select markup type: 'html', 'jade', 'php'
 
@@ -49,13 +61,22 @@ module.exports = {
       src: src + '/**/*.html',
       dest: build
     },
+
     jade: {
-      src: [src+'/jade/**/*.jade', '!'+src+'/jade/_partials/**', '!'+src+'/jade/base.jade'],
+      src: [
+        src+'/jade/**/*.jade',
+        '!'+src+'/jade/_partials/**',
+        '!'+src+'/jade/_layouts/**',
+        '!'+src+'/jade/_mixins/**'
+      ],
       dest: build,
       settings: {
         pretty: true
-      }
+      },
+      loadData: true,
+      dataFile: src+'/jade/data/site-data.json'
     },
+
     jadePhp:{
       src: [src+'/jade/**/*.jade', '!'+src+'/jade/layouts/**'],
       dest: build,
@@ -63,31 +84,24 @@ module.exports = {
         pretty: true
       }
     },
+
     php: {
       src: src + '/**/*.php',
       dest: build,
     },
   },
 
-  theme: {
-    lang: {
-      src: src+'languages/**/*', // Glob matching any language files you'd like to copy over
-      dest: build+'languages/'
-    },
-    php: {
-      src: src+'**/*.php',
-      dest: build
-    }
-  },
-
   scripts: {
     src: src + '/javascript/**/*.js',
     dest: build + '/js',
+    filename: 'main.js'
   },
+
+
 
   styles: {
     build: {
-      src: [src+'/scss/*.scss', '!'+src+'/scss/_*.scss'], // Ignore partials
+      src: [src+'/scss/**/*.scss', '!'+src+'/scss/**/_*.scss'], // Ignore partials
       dest: build+'/css'
     },
     dist: {
@@ -99,25 +113,55 @@ module.exports = {
     autoprefixer: { browsers: ['> 3%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ios 6', 'android 4'] },
     rename: { suffix: '.min' },
     minify: { keepSpecialComments: 1, roundingPrecision: 3 },
+    
     rubySass: {                     // Requires the Ruby implementation of Sass; run `gem install sass` if you use this; Compass is not included by default
       loadPath: bowerDir,           // Adds the `bower_components` directory to the load path so you can @import directly
       precision: 6,
       'sourcemap=none': true        // Not yet ready for prime time; Sass 3.4 has srcmaps on by default but this causes some problems in the Gulp toolchain
     },
+    
     libsass: {                      // Requires the libsass implementation of Sass
       includePaths: [bowerDir],             // Adds the `bower_components` directory to the load path so you can @import directly
       precision: 6
     }
   },
 
+
+
   iconfonts: {
     src: bowerDir + '/fontawesome/fonts/**.*',
     dest: build + '/fonts'
   },
 
+  utils: {
+    // A glob matching junk files to clean out of `build`
+    clean: [ 
+      build+'**/.DS_Store'
+    ],
+    // Clean this out before creating a new distribution copy
+    wipeDist: [dist],
+    wipeBuild: [build],
+    dist: {
+      src: [build+'**/*', '!'+build+'**/*.min.css'],
+      dest: dist
+    }
+  },
+
   images: {
     src: src + '/images/**/*.{png,jpg,jpeg,gif,svg}',
+    extraImages: src + '/images/**/*.ico',
     dest: build + '/img'
+  },
+
+  theme: {
+    lang: {
+      src: src+'languages/**/*', // Glob matching any language files you'd like to copy over
+      dest: build+'languages/'
+    },
+    php: {
+      src: src+'**/*.php',
+      dest: build
+    }
   },
   
 };

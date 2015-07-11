@@ -1,0 +1,14 @@
+//-
+
+mixin image(src,title)
+  //- attributes == {class: "btn"}
+  img(src=src, title=name, alt=name)
+  
+mixin video(host,videoId,w,h)
+  .flex-video.widescreen
+    if host == "vimeo"
+      iframe(src='http://player.vimeo.com/video/'+videoId width=w height=h frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
+    else if host == "youtube"
+      iframe(src='http://www.youtube.com/embed/'+videoId width=w height=h frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
+    else
+      p videoId must be either from vimeo or youtube
