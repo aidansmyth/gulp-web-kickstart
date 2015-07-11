@@ -1,9 +1,29 @@
-//-
+//- Media types minxins
+//- 
 
+//- Add dependencies
+//--------------------------------------------------------------------
+
+
+//- Load variables
+//--------------------------------------------------------------------
+//- - var x = ""
+
+
+//- Functions
+//--------------------------------------------------------------------
+
+
+
+//- Start mixins
+//--------------------------------------------------------------------
+
+//- Image Mixin
 mixin image(src,title)
   //- attributes == {class: "btn"}
   img(src=src, title=name, alt=name)
-  
+
+//- Video Mixin  
 mixin video(host,videoId,w,h)
   .flex-video.widescreen
     if host == "vimeo"

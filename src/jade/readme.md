@@ -10,12 +10,25 @@ Introduction Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis 
   3. Footers
   4. Sidebars
 3. Partials: Mixins
+  1. Standard 
+  2. Media
+  3. Features
+  4. Portfolio
+  5. Ecommerce
 4. Partials: Layouts
+  1. Home pages
+  2. Standard
+  3. Portfolio
+  4. Ecommerce
 5. Pages
+  1. 
 
 ---
 
 ## Loading Data
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex maiores eligendi quam voluptatum aspernatur. Nisi, fugit nostrum saepe, impedit molestiae provident ullam voluptatem sint velit autem debitis laudantium reiciendis, quidem!
+
+### Website data
 **Lacation:** `data/site-data.json`
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex maiores eligendi quam voluptatum aspernatur. Nisi, fugit nostrum saepe, impedit molestiae provident ullam voluptatem sint velit autem debitis laudantium reiciendis, quidem!
@@ -114,6 +127,12 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex maiores eligendi qu
 * Features
     - Headline
     - Feature-graphic
+    - Carousel
+      + +carousel()
+      + +carousel-full()
+      + +carousel-full-overlay()
+      + +carousel-thumbnail()
+      + +carousel-thumbnail-overlay()
 * forms
     - Contact form
     - Subscription form
@@ -121,14 +140,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex maiores eligendi qu
 * Portfolio
     - portfolio-item
     - portfolio-item-preview
-* Post types
+* Pages
     - blog-post
     - blog-post-preview
     - article
     - article-preview
-* Carousel
-    - +carousel()
-    - +carousel-full()
-    - +carousel-full-overlay()
-    - +carousel-thumbnail()
-    - +carousel-thumbnail-overlay()
+
