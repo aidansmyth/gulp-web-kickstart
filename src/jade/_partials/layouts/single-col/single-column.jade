@@ -1,0 +1,28 @@
+//- One column template
+//- 
+
+//- Add dependencies
+//--------------------------------------------------------------------
+//- Load base template
+extends _layouts/base
+
+//- Include Mixins
+
+
+//- Start template
+//--------------------------------------------------------------------
+
+//- Page title
+block pagetitle
+    title Single page | #{siteName}
+
+//- Page Body
+block body
+  
+  include ../../components/navigation/nav-default
+
+	.row
+		block content
+
+  include ../../components/footers/footer-default
+ 
